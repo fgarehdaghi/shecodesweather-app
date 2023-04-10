@@ -1,4 +1,26 @@
-h1{font-size: 15px;
-    color:rgb(10, 196, 253);
-    margin-bottom: 1.5rem;}
-    .barf{font-size: 30px;}
+.weather {
+  font-size: 15px;
+  color: rgb(10, 196, 253);
+  margin-bottom: 1.5rem;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.farnaz {
+  font-family: "Explora", cursive;
+  font-size: 25px;
+  font-weight: 900;
+}
+.barf {
+  font-size: 35px;
+}
+#inputCityName {
+  background-color: rgb(227, 240, 250);
+  border-color: rgb(230, 255, 255);
+  color: black;
+}
+#buttonSearch {
+  background-color: rgb(25, 185, 253);
+}
+.degreeCen {
+  position: relative;
+  top: -3px;
+}

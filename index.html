@@ -1,26 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Explora&family=Inspiration&family=Oswald:wght@400;500&display=swap"
+        rel="stylesheet">
+
     <title>weatherapp</title>
 </head>
+
 <body>
     <link rel="stylesheet" href="src/style.css">
-<div class="container">
-    <H1><span class="barf">❄</span> Weather App by Farnaz</H1>
-   <div class="row">
-    <div class="col-8">
-        <form id="inputCity">
-            <input class="form-control" type="text" autocomplete="off" autofocus="on" id="inputCityName"placeholder="City Name">
-        </form>
-    </div>
-   </div>
-    
-</div>
-    <script src="src/index.js"></script>
+    <div class="container">
+        <H1 class="weather"><span class="barf">❄</span> Weather App by <span class="farnaz">Farnaz</span></H1>
+        <div class="row">
+            <div class="col-10">
+                <form id="inputCity">
+                    <input class="form-control" type="text" autocomplete="off" autofocus="on" id="inputCityName"
+                        placeholder="City Name">
+            </div>
+            <div class="col-1">
+                <button class="btn btn-primary mb-2" id="buttonSearch">Search</button>
+            </div>
+            </form>
+            <h1 class="CityName">Tabriz</h1>
+            <div class="row">
+                <div class="col-6">
+                    <div class="dayName">Monday <span class="time">12.50</span> <span class="clouds">Few Clouds</span>
+                    </div>
+                    <div class="humidity">Humidity <span class="wind">Wind</span> </div>
+                </div>
+                <div class="col-3" id="degreeValue">21&deg; <span class="degreeCen">c</span> </div>
+            </div>
+            <div class="row weekdays">
+                <div class="col-2" id="day1">
+                    Tuesday
+                    <div class="dayemoji">
+                        ⛅
+                    </div>
+                    <div class="dayWeather">
+                        <span class="min">18&deg;c</span><span class="max">18&deg;c</span>
+                    </div>
+                </div>
+                <div class="col-2" id="day2">
+                    Wednesday
+                    <div class="dayemoji">
+                        ⛅
+                    </div>
+                    <div class="dayWeather">
+                        <span class="min">18&deg;c</span><span class="max">18&deg;c</span>
+                    </div>
+                </div>
+                <div class="col-2 day3">
+                    Thursday
+                    <div class="dayemoji">
+                        ⛅
+                    </div>
+                    <div class="dayWeather">
+                        <span class="min">18&deg;c</span><span class="max">18&deg;c</span>
+                    </div>
+                </div>
+                <div class="col-2 day4">
+                    Friday
+                    <div class="dayemoji">
+                        ⛅
+                    </div>
+                    <div class="dayWeather">
+                        <span class="min">18&deg;c</span><span class="max">18&deg;c</span>
+                    </div>
+                </div>
+                <div class="col-2 day5">
+                    Saturday
+                    <div class="dayemoji">
+                        ⛅
+                    </div>
+                    <div class="dayWeather">
+                        <span class="min">18&deg;c</span><span class="max">18&deg;c</span>
+                    </div>
+                </div>
+                <div class="col-2 day6">
+                    Sunday
+                    <div class="dayemoji">
+                        ⛅
+                    </div>
+                    <div class="dayWeather">
+                        <span class="min">18&deg;c</span><span class="max">18&deg;c</span>
+                    </div>
+                </div>
+            </div>
+            <div class="codedby">This project was coded by Farnaz Garehdaghi</div>
+        </div>
+        <script src="src/index.js"></script>
 </body>
+
 </html>
