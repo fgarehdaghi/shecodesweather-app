@@ -19,8 +19,56 @@
 }
 #buttonSearch {
   background-color: rgb(25, 185, 253);
+  padding-left: 3rem;
+  padding-right: 3rem;
 }
 .degreeCen {
   position: relative;
   top: -3px;
 }
+.cityName {
+  color: rgb(37, 99, 255);
+  font-size: 50px;
+  font-weight: 800;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+.dayName {
+  font-size: 17px;
+  color: deepskyblue;
+}
+#degreeValue {
+  font-size: 35px;
+  color: rgb(37, 99, 255);
+  font-weight: 800;
+   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+     margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+.humidity{color: deepskyblue;
+  
+}
+.wind{color: deepskyblue;
+}
+.hvalue{color: coral;
+}
+.wvalue{color: coral;
+}
+.row11{padding-bottom: 5rem;
+padding-top: 1rem;}
+.weekdays{color:rgb(37, 99, 255);
+  font-size: 20px;
+padding-bottom: 4rem;
+font-weight: 500;}
+.dayWeather{color: coral;
+  padding-top: 2rem;
+padding-bottom: 2rem;}
+.dayemoji{font-size: 40px;
+padding-top: 2rem;}
+.max{color:rgb(251, 67, 0)}
+.codedby{color: rgb(0, 183, 255);
+  display: block;
+font-weight: 600;
+text-align: center;}
+.container{background-color:aliceblue;}
