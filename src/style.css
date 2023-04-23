@@ -75,7 +75,7 @@
 }
 .dayemoji {
   font-size: 40px;
-  padding-top: 2rem;
+  padding-top: 1.5rem;
 }
 .max {
   color: rgb(251, 67, 0);
@@ -89,3 +89,4 @@
 .container {
   background-color: aliceblue;
 }
+.clouds{color: rgb(0, 183, 255);}
