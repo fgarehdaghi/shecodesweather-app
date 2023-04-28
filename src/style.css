@@ -71,7 +71,7 @@
 .dayWeather {
   color: coral;
   padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
 }
 .dayemoji {
   font-size: 40px;
@@ -89,4 +89,6 @@
 .container {
   background-color: aliceblue;
 }
-.clouds{color: rgb(0, 183, 255);}
+.clouds {
+  color: rgb(0, 183, 255);
+}
