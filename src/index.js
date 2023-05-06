@@ -1,5 +1,5 @@
 let apiKey = "o40a0fe506b7a43e2efa89dt4adcd7fb";
-let apiUrl=`https://api.shecodes.io/weather/v1/current?query=tabriz&key=${apiKey}&units=metric`
+let apiUrl = `https://api.shecodes.io/weather/v1/current?query=tabriz&key=${apiKey}&units=metric`;
 let apiForecast = `https://api.shecodes.io/weather/v1/forecast?query=tabriz&key=${apiKey}&units=metric`;
 let today = new Date();
 let dayname1 = today.getDay();
@@ -65,21 +65,40 @@ if (dayweek6 > 6) {
 let dayVal7 = daysofWeek[dayweek6];
 let weekday6 = document.querySelector(".weekdays6");
 weekday6.innerHTML = `${dayVal7}`;
-axios.get(apiUrl).then(displayTemperature)
-function displayTemperature (response){
-  let temperatureElementt=document.querySelector("#temperatureValue");
-  temperatureElementt.innerHTML=Math.round(response.data.temperature.current);
-  let cityElementt=document.querySelector(".cityName");
-  cityElementt.innerHTML=response.data.city;
-  let descriptionElementt=document.querySelector(".clouds");
-  descriptionElementt.innerHTML=response.data.condition.description;
-  let humidityElementt=document.querySelector(".hvalue");
-  humidityElementt.innerHTML=response.data.temperature.humidity;
-  let windelEmentt=document.querySelector("#wvaluee");
-  windelEmentt.innerHTML=Math.round(response.data.wind.speed);
+axios.get(apiUrl).then(displayTemperature);
+function displayTemperature(response) {
+  let temperatureElementt = document.querySelector("#temperatureValue");
+  temperatureElementt.innerHTML = Math.round(response.data.temperature.current);
+  let cityElementt = document.querySelector(".cityName");
+  cityElementt.innerHTML = response.data.city;
+  let descriptionElementt = document.querySelector(".clouds");
+  descriptionElementt.innerHTML = response.data.condition.description;
+  let humidityElementt = document.querySelector(".hvalue");
+  humidityElementt.innerHTML = response.data.temperature.humidity;
+  let windelEmentt = document.querySelector("#wvaluee");
+  windelEmentt.innerHTML = Math.round(response.data.wind.speed);
 }
-axios.get(apiForecast).then(displayDaysTemp)
-function displayDaysTemp (response){
- let temperatureday1=document.querySelector("#day1temp");
-  temperatureday1.innerHTML=Math.round(response.data.daily[0].temperature.day)
+axios.get(apiForecast).then(displayDaysTemp);
+function displayDaysTemp(response) {
+  let temperatureday1 = document.querySelector("#day1temp");
+  temperatureday1.innerHTML = Math.round(
+    response.data.daily[0].temperature.day
+  );
+  let temperatureday2 = document.querySelector("#day2temp");
+  temperatureday2.innerHTML = Math.round(
+    response.data.daily[1].temperature.day
+  );
+   let temperatureday3 = document.querySelector("#day3temp");
+   temperatureday3.innerHTML = Math.round(
+     response.data.daily[2].temperature.day
+   );
+    let temperatureday4 = document.querySelector("#day4temp");
+    temperatureday4.innerHTML = Math.round(
+      response.data.daily[3].temperature.day
+    );
+     let temperatureday5 = document.querySelector("#day5temp");
+     temperatureday5.innerHTML = Math.round(
+       response.data.daily[4].temperature.day);
+        let temperatureday6=document.querySelector("#day6temp");
+  temperatureday6.innerHTML=Math.round(response.data.daily[5].temperature.day);
 }
