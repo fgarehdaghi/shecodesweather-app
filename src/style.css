@@ -24,7 +24,7 @@
 }
 .degreeCen {
   position: relative;
-  top: -3px;
+  top: -10px;
 }
 .cityName {
   color: rgb(37, 99, 255);
@@ -70,12 +70,13 @@
 }
 .dayWeather {
   color: coral;
-  padding-top: 2rem;
+  padding-top: 1rem;
   padding-bottom: 1rem;
+  
 }
 .dayemoji {
   font-size: 40px;
-  padding-top: 1.5rem;
+  padding-top: 1rem;
 }
 .max {
   color: rgb(251, 67, 0);
@@ -91,4 +92,9 @@
 }
 .clouds {
   color: rgb(0, 183, 255);
+  text-transform: capitalize;
+}
+.daytempfull{
+  color: crimson;
+  padding-left: 15px;
 }

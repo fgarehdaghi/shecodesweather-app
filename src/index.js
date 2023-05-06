@@ -1,5 +1,6 @@
-let apiKey =o40a0fe506b7a43e2efa89dt4adcd7fb;
+let apiKey = "o40a0fe506b7a43e2efa89dt4adcd7fb";
 let apiUrl=`https://api.shecodes.io/weather/v1/current?query=tabriz&key=${apiKey}&units=metric`
+let apiForecast = `https://api.shecodes.io/weather/v1/forecast?query=tabriz&key=${apiKey}&units=metric`;
 let today = new Date();
 let dayname1 = today.getDay();
 let daysofWeek = [
@@ -64,3 +65,21 @@ if (dayweek6 > 6) {
 let dayVal7 = daysofWeek[dayweek6];
 let weekday6 = document.querySelector(".weekdays6");
 weekday6.innerHTML = `${dayVal7}`;
+axios.get(apiUrl).then(displayTemperature)
+function displayTemperature (response){
+  let temperatureElementt=document.querySelector("#temperatureValue");
+  temperatureElementt.innerHTML=Math.round(response.data.temperature.current);
+  let cityElementt=document.querySelector(".cityName");
+  cityElementt.innerHTML=response.data.city;
+  let descriptionElementt=document.querySelector(".clouds");
+  descriptionElementt.innerHTML=response.data.condition.description;
+  let humidityElementt=document.querySelector(".hvalue");
+  humidityElementt.innerHTML=response.data.temperature.humidity;
+  let windelEmentt=document.querySelector("#wvaluee");
+  windelEmentt.innerHTML=Math.round(response.data.wind.speed);
+}
+axios.get(apiForecast).then(displayDaysTemp)
+function displayDaysTemp (response){
+ let temperatureday1=document.querySelector("#day1temp");
+  temperatureday1.innerHTML=Math.round(response.data.daily[0].temperature.day)
+}
