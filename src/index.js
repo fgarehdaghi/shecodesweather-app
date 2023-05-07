@@ -14,10 +14,10 @@ function displayTemperature(response) {
   humidityElementt.innerHTML = response.data.temperature.humidity;
   let windelEmentt = document.querySelector("#wvaluee");
   windelEmentt.innerHTML = Math.round(response.data.wind.speed);
-  let dateElement=document.querySelector(".dayName");
-  dateElement.innerHTML=formatDate(response.data.time*1000);
+  let dateElement = document.querySelector(".dayName");
+  dateElement.innerHTML = formatDate(response.data.time * 1000);
   let iconElement = document.querySelector("#icon");
-  iconElement.setAttribute("src",response.data.condition.icon_url)
+  iconElement.setAttribute("src", response.data.condition.icon_url);
 }
 axios.get(apiForecast).then(displayDaysTemp);
 function displayDaysTemp(response) {
@@ -63,52 +63,52 @@ function displayDaysTemp(response) {
   temperatureday3max.innerHTML = Math.round(
     response.data.daily[2].temperature.maximum
   );
-let iconElement3 = document.querySelector("#day3icon");
-iconElement3.setAttribute("src", response.data.daily[2].condition.icon_url);
+  let iconElement3 = document.querySelector("#day3icon");
+  iconElement3.setAttribute("src", response.data.daily[2].condition.icon_url);
   let temperatureday4 = document.querySelector("#day4temp");
   temperatureday4.innerHTML = Math.round(
     response.data.daily[3].temperature.day
   );
- let temperatureday4min = document.querySelector("#daytemp4min");
- temperatureday4min.innerHTML = Math.round(
-   response.data.daily[3].temperature.minimum
- );
- let temperatureday4max = document.querySelector("#daytemp4max");
- temperatureday4max.innerHTML = Math.round(
-   response.data.daily[3].temperature.maximum
- );
-let iconElement4 = document.querySelector("#day4icon");
-iconElement4.setAttribute("src", response.data.daily[3].condition.icon_url);
+  let temperatureday4min = document.querySelector("#daytemp4min");
+  temperatureday4min.innerHTML = Math.round(
+    response.data.daily[3].temperature.minimum
+  );
+  let temperatureday4max = document.querySelector("#daytemp4max");
+  temperatureday4max.innerHTML = Math.round(
+    response.data.daily[3].temperature.maximum
+  );
+  let iconElement4 = document.querySelector("#day4icon");
+  iconElement4.setAttribute("src", response.data.daily[3].condition.icon_url);
   let temperatureday5 = document.querySelector("#day5temp");
   temperatureday5.innerHTML = Math.round(
     response.data.daily[4].temperature.day
   );
- let temperatureday5min = document.querySelector("#daytemp5min");
- temperatureday5min.innerHTML = Math.round(
-   response.data.daily[4].temperature.minimum
- );
- let temperatureday5max = document.querySelector("#daytemp5max");
- temperatureday5max.innerHTML = Math.round(
-   response.data.daily[4].temperature.maximum
- );
-let iconElement5 = document.querySelector("#day5icon");
-iconElement5.setAttribute("src", response.data.daily[4].condition.icon_url);
+  let temperatureday5min = document.querySelector("#daytemp5min");
+  temperatureday5min.innerHTML = Math.round(
+    response.data.daily[4].temperature.minimum
+  );
+  let temperatureday5max = document.querySelector("#daytemp5max");
+  temperatureday5max.innerHTML = Math.round(
+    response.data.daily[4].temperature.maximum
+  );
+  let iconElement5 = document.querySelector("#day5icon");
+  iconElement5.setAttribute("src", response.data.daily[4].condition.icon_url);
   let temperatureday6 = document.querySelector("#day6temp");
   temperatureday6.innerHTML = Math.round(
     response.data.daily[5].temperature.day
   );
-   let temperatureday6min = document.querySelector("#daytemp6min");
-   temperatureday6min.innerHTML = Math.round(
-     response.data.daily[5].temperature.minimum
-   );
-   let temperatureday6max = document.querySelector("#daytemp6max");
-   temperatureday6max.innerHTML = Math.round(
-     response.data.daily[5].temperature.maximum
-   );
-   let iconElement6 = document.querySelector("#day6icon");
-   iconElement6.setAttribute("src", response.data.daily[5].condition.icon_url);
+  let temperatureday6min = document.querySelector("#daytemp6min");
+  temperatureday6min.innerHTML = Math.round(
+    response.data.daily[5].temperature.minimum
+  );
+  let temperatureday6max = document.querySelector("#daytemp6max");
+  temperatureday6max.innerHTML = Math.round(
+    response.data.daily[5].temperature.maximum
+  );
+  let iconElement6 = document.querySelector("#day6icon");
+  iconElement6.setAttribute("src", response.data.daily[5].condition.icon_url);
 }
-//date and time 
+//date and time
 /* let today = new Date();
 let dayname1 = today.getDay();
 let daysofWeek = [
@@ -174,17 +174,17 @@ let dayVal7 = daysofWeek[dayweek6];
 let weekday6 = document.querySelector(".weekdays6");
 weekday6.innerHTML = `${dayVal7}`; */
 //time and date 2
-function formatDate(timesteps){
-  let date=new Date(timesteps);
-  let hours=date.getHours();
-  let minutes=date.getMinutes();
-  let day= date.getDay();
+function formatDate(timesteps) {
+  let date = new Date(timesteps);
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
+  let day = date.getDay();
   let dayname = daysofWeek[day];
-  if (minutes<10){
-minutes=`0${minutes}`
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
   }
-  if (hours<10){
-    hours=`0${hours}`
+  if (hours < 10) {
+    hours = `0${hours}`;
   }
   //day1
   dayweek1 = day + 1;
@@ -234,7 +234,7 @@ minutes=`0${minutes}`
   let dayVal7 = daysofWeek[dayweek6];
   let weekday6 = document.querySelector(".weekdays6");
   weekday6.innerHTML = `${dayVal7}`;
- return`${dayname} ${hours}:${minutes}`
+  return `${dayname} ${hours}:${minutes}`;
 }
 let daysofWeek = [
   "Sunday",
@@ -247,17 +247,23 @@ let daysofWeek = [
 ];
 
 //form
-function search (city){
+function search(city) {
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
   let apiForecast = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayTemperature);
   axios.get(apiForecast).then(displayDaysTemp);
 }
-function handleSubmit (event){
+function handleSubmit(event) {
   event.preventDefault();
-  let cityInputElement=document.querySelector("#inputCityName");
- search(cityInputElement.value)
+  let cityInputElement = document.querySelector("#inputCityName");
+  search(cityInputElement.value);
 }
 
-let form =document.querySelector("#inputCity");
-form.addEventListener("submit",handleSubmit)
+let form = document.querySelector("#inputCity");
+form.addEventListener("submit", handleSubmit);
+//f conversion
+let farlink = document.querySelector("#flink");
+function showFTemp(event) {
+  event.preventDefault();
+}
+farlink.addEventListener("click", showFTemp);
