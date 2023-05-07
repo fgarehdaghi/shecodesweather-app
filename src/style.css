@@ -24,7 +24,19 @@
 }
 .degreeCen {
   position: relative;
-  top: -10px;
+  top: -12px;
+  font-weight:lighter;
+  font-size:25px ;
+}
+.degreeF {
+  position: relative;
+  top: -8px;
+  font-weight:lighter;
+  font-size:25px ;
+  color: coral;
+}
+#degreee{
+    color: coral;
 }
 .cityName {
   color: rgb(37, 99, 255);
