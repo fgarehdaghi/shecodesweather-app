@@ -1,70 +1,7 @@
 let apiKey = "o40a0fe506b7a43e2efa89dt4adcd7fb";
 let apiUrl = `https://api.shecodes.io/weather/v1/current?query=tabriz&key=${apiKey}&units=metric`;
 let apiForecast = `https://api.shecodes.io/weather/v1/forecast?query=tabriz&key=${apiKey}&units=metric`;
-let today = new Date();
-let dayname1 = today.getDay();
-let daysofWeek = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-let dayVal = daysofWeek[dayname1];
-let hour = today.getHours();
-let minute = today.getMinutes();
-let dayname2 = document.querySelector(".dayName");
-dayname2.innerHTML = `${dayVal} ${hour} : ${minute}`;
-//day1
-dayweek1 = dayname1 + 1;
-if (dayweek1 > 6) {
-  dayweek1 = dayweek1 - 7;
-}
-let dayVal2 = daysofWeek[dayweek1];
-let weekday1 = document.querySelector(".weekdays1");
-weekday1.innerHTML = `${dayVal2}`;
-//day2
-dayweek2 = dayname1 + 2;
-if (dayweek2 > 6) {
-  dayweek2 = dayweek2 - 7;
-}
-let dayVal3 = daysofWeek[dayweek2];
-let weekday2 = document.querySelector(".weekdays2");
-weekday2.innerHTML = `${dayVal3}`;
-//day3
-dayweek3 = dayname1 + 3;
-if (dayweek3 > 6) {
-  dayweek3 = dayweek3 - 7;
-}
-let dayVal4 = daysofWeek[dayweek3];
-let weekday3 = document.querySelector(".weekdays3");
-weekday3.innerHTML = `${dayVal4}`;
-//day4
-dayweek4 = dayname1 + 4;
-if (dayweek4 > 6) {
-  dayweek4 = dayweek4 - 7;
-}
-let dayVal5 = daysofWeek[dayweek4];
-let weekday4 = document.querySelector(".weekdays4");
-weekday4.innerHTML = `${dayVal5}`;
-//day5
-dayweek5 = dayname1 + 5;
-if (dayweek5 > 6) {
-  dayweek5 = dayweek5 - 7;
-}
-let dayVal6 = daysofWeek[dayweek5];
-let weekday5 = document.querySelector(".weekdays5");
-weekday5.innerHTML = `${dayVal6}`;
-//day6
-dayweek6 = dayname1 + 6;
-if (dayweek6 > 6) {
-  dayweek6 = dayweek6 - 7;
-}
-let dayVal7 = daysofWeek[dayweek6];
-let weekday6 = document.querySelector(".weekdays6");
-weekday6.innerHTML = `${dayVal7}`;
+
 axios.get(apiUrl).then(displayTemperature);
 function displayTemperature(response) {
   let temperatureElementt = document.querySelector("#temperatureValue");
@@ -77,6 +14,8 @@ function displayTemperature(response) {
   humidityElementt.innerHTML = response.data.temperature.humidity;
   let windelEmentt = document.querySelector("#wvaluee");
   windelEmentt.innerHTML = Math.round(response.data.wind.speed);
+  let dateElement=document.querySelector(".dayName");
+  dateElement.innerHTML=formatDate(response.data.time*1000);
 }
 axios.get(apiForecast).then(displayDaysTemp);
 function displayDaysTemp(response) {
@@ -156,3 +95,141 @@ function displayDaysTemp(response) {
      response.data.daily[5].temperature.maximum
    );
 }
+//date and time 
+/* let today = new Date();
+let dayname1 = today.getDay();
+let daysofWeek = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+let dayVal = daysofWeek[dayname1];
+let hour = today.getHours();
+let minute = today.getMinutes();
+let dayname2 = document.querySelector(".dayName");
+dayname2.innerHTML = `${dayVal} ${hour} : ${minute}`;
+//day1
+dayweek1 = dayname1 + 1;
+if (dayweek1 > 6) {
+  dayweek1 = dayweek1 - 7;
+}
+let dayVal2 = daysofWeek[dayweek1];
+let weekday1 = document.querySelector(".weekdays1");
+weekday1.innerHTML = `${dayVal2}`;
+//day2
+dayweek2 = dayname1 + 2;
+if (dayweek2 > 6) {
+  dayweek2 = dayweek2 - 7;
+}
+let dayVal3 = daysofWeek[dayweek2];
+let weekday2 = document.querySelector(".weekdays2");
+weekday2.innerHTML = `${dayVal3}`;
+//day3
+dayweek3 = dayname1 + 3;
+if (dayweek3 > 6) {
+  dayweek3 = dayweek3 - 7;
+}
+let dayVal4 = daysofWeek[dayweek3];
+let weekday3 = document.querySelector(".weekdays3");
+weekday3.innerHTML = `${dayVal4}`;
+//day4
+dayweek4 = dayname1 + 4;
+if (dayweek4 > 6) {
+  dayweek4 = dayweek4 - 7;
+}
+let dayVal5 = daysofWeek[dayweek4];
+let weekday4 = document.querySelector(".weekdays4");
+weekday4.innerHTML = `${dayVal5}`;
+//day5
+dayweek5 = dayname1 + 5;
+if (dayweek5 > 6) {
+  dayweek5 = dayweek5 - 7;
+}
+let dayVal6 = daysofWeek[dayweek5];
+let weekday5 = document.querySelector(".weekdays5");
+weekday5.innerHTML = `${dayVal6}`;
+//day6
+dayweek6 = dayname1 + 6;
+if (dayweek6 > 6) {
+  dayweek6 = dayweek6 - 7;
+}
+let dayVal7 = daysofWeek[dayweek6];
+let weekday6 = document.querySelector(".weekdays6");
+weekday6.innerHTML = `${dayVal7}`; */
+//time and date 2
+function formatDate(timesteps){
+  let date=new Date(timesteps);
+  let hours=date.getHours();
+  let minutes=date.getMinutes();
+  let day= date.getDay();
+  let dayname = daysofWeek[day];
+  if (minutes<10){
+minutes=`0${minutes}`
+  }
+  if (hours<10){
+    hours=`0${hours}`
+  }
+  //day1
+  dayweek1 = day + 1;
+  if (dayweek1 > 6) {
+    dayweek1 = dayweek1 - 7;
+  }
+  let dayVal2 = daysofWeek[dayweek1];
+  let weekday1 = document.querySelector(".weekdays1");
+  weekday1.innerHTML = `${dayVal2}`;
+  //day2
+  dayweek2 = day + 2;
+  if (dayweek2 > 6) {
+    dayweek2 = dayweek2 - 7;
+  }
+  let dayVal3 = daysofWeek[dayweek2];
+  let weekday2 = document.querySelector(".weekdays2");
+  weekday2.innerHTML = `${dayVal3}`;
+  //day3
+  dayweek3 = day + 3;
+  if (dayweek3 > 6) {
+    dayweek3 = dayweek3 - 7;
+  }
+  let dayVal4 = daysofWeek[dayweek3];
+  let weekday3 = document.querySelector(".weekdays3");
+  weekday3.innerHTML = `${dayVal4}`;
+  //day4
+  dayweek4 = day + 4;
+  if (dayweek4 > 6) {
+    dayweek4 = dayweek4 - 7;
+  }
+  let dayVal5 = daysofWeek[dayweek4];
+  let weekday4 = document.querySelector(".weekdays4");
+  weekday4.innerHTML = `${dayVal5}`;
+  //day5
+  dayweek5 = day + 5;
+  if (dayweek5 > 6) {
+    dayweek5 = dayweek5 - 7;
+  }
+  let dayVal6 = daysofWeek[dayweek5];
+  let weekday5 = document.querySelector(".weekdays5");
+  weekday5.innerHTML = `${dayVal6}`;
+  //day6
+  dayweek6 = day + 6;
+  if (dayweek6 > 6) {
+    dayweek6 = dayweek6 - 7;
+  }
+  let dayVal7 = daysofWeek[dayweek6];
+  let weekday6 = document.querySelector(".weekdays6");
+  weekday6.innerHTML = `${dayVal7}`;
+ return`${dayname} ${hours}:${minutes}`
+}
+let daysofWeek = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+

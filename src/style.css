@@ -38,6 +38,10 @@
   font-size: 17px;
   color: deepskyblue;
 }
+#updated {
+  font-size: 17px;
+  color: deepskyblue;
+}
 #degreeValue {
   font-size: 35px;
   color: rgb(37, 99, 255);
@@ -92,7 +96,10 @@
 }
 .clouds {
   color: rgb(0, 183, 255);
-  text-transform: capitalize;
+ 
+}
+.clouds:first-letter{
+   text-transform: capitalize;
 }
 .daytempfull{
   color: crimson;
