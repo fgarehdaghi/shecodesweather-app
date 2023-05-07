@@ -16,6 +16,8 @@ function displayTemperature(response) {
   windelEmentt.innerHTML = Math.round(response.data.wind.speed);
   let dateElement=document.querySelector(".dayName");
   dateElement.innerHTML=formatDate(response.data.time*1000);
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute("src",response.data.condition.icon_url)
 }
 axios.get(apiForecast).then(displayDaysTemp);
 function displayDaysTemp(response) {
@@ -31,6 +33,9 @@ function displayDaysTemp(response) {
   temperatureday1max.innerHTML = Math.round(
     response.data.daily[0].temperature.maximum
   );
+  let iconElement1 = document.querySelector("#day1icon");
+  iconElement1.setAttribute("src", response.data.daily[0].condition.icon_url);
+
   let temperatureday2 = document.querySelector("#day2temp");
   temperatureday2.innerHTML = Math.round(
     response.data.daily[1].temperature.day
@@ -43,6 +48,9 @@ function displayDaysTemp(response) {
   temperatureday2max.innerHTML = Math.round(
     response.data.daily[1].temperature.maximum
   );
+  let iconElement2 = document.querySelector("#day2icon");
+  iconElement2.setAttribute("src", response.data.daily[1].condition.icon_url);
+
   let temperatureday3 = document.querySelector("#day3temp");
   temperatureday3.innerHTML = Math.round(
     response.data.daily[2].temperature.day
@@ -55,7 +63,8 @@ function displayDaysTemp(response) {
   temperatureday3max.innerHTML = Math.round(
     response.data.daily[2].temperature.maximum
   );
-
+let iconElement3 = document.querySelector("#day3icon");
+iconElement3.setAttribute("src", response.data.daily[2].condition.icon_url);
   let temperatureday4 = document.querySelector("#day4temp");
   temperatureday4.innerHTML = Math.round(
     response.data.daily[3].temperature.day
@@ -68,7 +77,8 @@ function displayDaysTemp(response) {
  temperatureday4max.innerHTML = Math.round(
    response.data.daily[3].temperature.maximum
  );
-
+let iconElement4 = document.querySelector("#day4icon");
+iconElement4.setAttribute("src", response.data.daily[3].condition.icon_url);
   let temperatureday5 = document.querySelector("#day5temp");
   temperatureday5.innerHTML = Math.round(
     response.data.daily[4].temperature.day
@@ -81,7 +91,8 @@ function displayDaysTemp(response) {
  temperatureday5max.innerHTML = Math.round(
    response.data.daily[4].temperature.maximum
  );
-
+let iconElement5 = document.querySelector("#day5icon");
+iconElement5.setAttribute("src", response.data.daily[4].condition.icon_url);
   let temperatureday6 = document.querySelector("#day6temp");
   temperatureday6.innerHTML = Math.round(
     response.data.daily[5].temperature.day
@@ -94,6 +105,8 @@ function displayDaysTemp(response) {
    temperatureday6max.innerHTML = Math.round(
      response.data.daily[5].temperature.maximum
    );
+   let iconElement6 = document.querySelector("#day6icon");
+   iconElement6.setAttribute("src", response.data.daily[5].condition.icon_url);
 }
 //date and time 
 /* let today = new Date();
