@@ -246,3 +246,18 @@ let daysofWeek = [
   "Saturday",
 ];
 
+//form
+function search (city){
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+  let apiForecast = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayTemperature);
+  axios.get(apiForecast).then(displayDaysTemp);
+}
+function handleSubmit (event){
+  event.preventDefault();
+  let cityInputElement=document.querySelector("#inputCityName");
+ search(cityInputElement.value)
+}
+
+let form =document.querySelector("#inputCity");
+form.addEventListener("submit",handleSubmit)
