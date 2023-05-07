@@ -9,7 +9,7 @@ let daysofWeek = [
   "Tuesday",
   "Wednesday",
   "Thursday",
-  "Fraiday",
+  "Friday",
   "Saturday",
 ];
 let dayVal = daysofWeek[dayname1];
@@ -84,21 +84,75 @@ function displayDaysTemp(response) {
   temperatureday1.innerHTML = Math.round(
     response.data.daily[0].temperature.day
   );
+  let temperatureday1min = document.querySelector("#daytemp1min");
+  temperatureday1min.innerHTML = Math.round(
+    response.data.daily[0].temperature.minimum
+  );
+  let temperatureday1max = document.querySelector("#daytemp1max");
+  temperatureday1max.innerHTML = Math.round(
+    response.data.daily[0].temperature.maximum
+  );
   let temperatureday2 = document.querySelector("#day2temp");
   temperatureday2.innerHTML = Math.round(
     response.data.daily[1].temperature.day
   );
-   let temperatureday3 = document.querySelector("#day3temp");
-   temperatureday3.innerHTML = Math.round(
-     response.data.daily[2].temperature.day
+  let temperatureday2min = document.querySelector("#daytemp2min");
+  temperatureday2min.innerHTML = Math.round(
+    response.data.daily[1].temperature.minimum
+  );
+  let temperatureday2max = document.querySelector("#daytemp2max");
+  temperatureday2max.innerHTML = Math.round(
+    response.data.daily[1].temperature.maximum
+  );
+  let temperatureday3 = document.querySelector("#day3temp");
+  temperatureday3.innerHTML = Math.round(
+    response.data.daily[2].temperature.day
+  );
+  let temperatureday3min = document.querySelector("#daytemp3min");
+  temperatureday3min.innerHTML = Math.round(
+    response.data.daily[2].temperature.minimum
+  );
+  let temperatureday3max = document.querySelector("#daytemp3max");
+  temperatureday3max.innerHTML = Math.round(
+    response.data.daily[2].temperature.maximum
+  );
+
+  let temperatureday4 = document.querySelector("#day4temp");
+  temperatureday4.innerHTML = Math.round(
+    response.data.daily[3].temperature.day
+  );
+ let temperatureday4min = document.querySelector("#daytemp4min");
+ temperatureday4min.innerHTML = Math.round(
+   response.data.daily[3].temperature.minimum
+ );
+ let temperatureday4max = document.querySelector("#daytemp4max");
+ temperatureday4max.innerHTML = Math.round(
+   response.data.daily[3].temperature.maximum
+ );
+
+  let temperatureday5 = document.querySelector("#day5temp");
+  temperatureday5.innerHTML = Math.round(
+    response.data.daily[4].temperature.day
+  );
+ let temperatureday5min = document.querySelector("#daytemp5min");
+ temperatureday5min.innerHTML = Math.round(
+   response.data.daily[4].temperature.minimum
+ );
+ let temperatureday5max = document.querySelector("#daytemp5max");
+ temperatureday5max.innerHTML = Math.round(
+   response.data.daily[4].temperature.maximum
+ );
+
+  let temperatureday6 = document.querySelector("#day6temp");
+  temperatureday6.innerHTML = Math.round(
+    response.data.daily[5].temperature.day
+  );
+   let temperatureday6min = document.querySelector("#daytemp6min");
+   temperatureday6min.innerHTML = Math.round(
+     response.data.daily[5].temperature.minimum
    );
-    let temperatureday4 = document.querySelector("#day4temp");
-    temperatureday4.innerHTML = Math.round(
-      response.data.daily[3].temperature.day
-    );
-     let temperatureday5 = document.querySelector("#day5temp");
-     temperatureday5.innerHTML = Math.round(
-       response.data.daily[4].temperature.day);
-        let temperatureday6=document.querySelector("#day6temp");
-  temperatureday6.innerHTML=Math.round(response.data.daily[5].temperature.day);
+   let temperatureday6max = document.querySelector("#daytemp6max");
+   temperatureday6max.innerHTML = Math.round(
+     response.data.daily[5].temperature.maximum
+   );
 }
