@@ -266,4 +266,4 @@ let farlink = document.querySelector("#flink");
 function showFTemp(event) {
   event.preventDefault();
 }
-farlink.addEventListener("click", showFTemp);
+
