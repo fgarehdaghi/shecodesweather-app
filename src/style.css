@@ -25,18 +25,18 @@
 .degreeCen {
   position: relative;
   top: -12px;
-  font-weight:lighter;
-  font-size:25px ;
+  font-weight: lighter;
+  font-size: 25px;
 }
 .degreeF {
   position: relative;
   top: -10px;
-  font-weight:lighter;
-  font-size:22px ;
+  font-weight: lighter;
+  font-size: 22px;
   color: coral;
 }
-#degreee{
-    color: coral;
+#degreee {
+  color: coral;
 }
 .cityName {
   color: rgb(37, 99, 255);
@@ -88,7 +88,6 @@
   color: coral;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  
 }
 .dayemoji {
   font-size: 40px;
@@ -108,29 +107,29 @@
 }
 .clouds {
   color: rgb(0, 183, 255);
- 
 }
-.clouds:first-letter{
-   text-transform: capitalize;
+.clouds:first-letter {
+  text-transform: capitalize;
 }
-.daytempfull{
+.daytempfull {
   color: crimson;
   padding-left: 15px;
 }
-#day1icon{
- margin-left: -.8rem;
-}#day2icon{
- margin-left: -.8rem;
+#day1icon {
+  margin-left: -0.8rem;
 }
-#day3icon{
- margin-left: -.8rem;
+#day2icon {
+  margin-left: -0.8rem;
 }
-#day4icon{
- margin-left: -.8rem;
+#day3icon {
+  margin-left: -0.8rem;
 }
-#day5icon{
-margin-left: -.8rem;
+#day4icon {
+  margin-left: -0.8rem;
 }
-#day6icon{
- margin-left: -.8rem;
+#day5icon {
+  margin-left: -0.8rem;
+}
+#day6icon {
+  margin-left: -0.8rem;
 }
